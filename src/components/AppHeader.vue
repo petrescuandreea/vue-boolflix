@@ -34,7 +34,10 @@ export default {
             this.listMovies = result.data.results;
             console.log(this.listMovies);
         this.$emit('search', this.listMovies);
-        })
+        });
+
+        // azzerro il valore dell'input 
+        this.inputText = "";
       },
   }
 }
