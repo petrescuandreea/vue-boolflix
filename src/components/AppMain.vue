@@ -1,14 +1,25 @@
 <template>
   <div id="card-container">
-      <div class="card">
-
-      </div>
+      <Movie  
+      v-for="movie in selectedMovie"
+      :key="movie.id" 
+      :details="movie"
+      />
   </div>
 </template>
 
 <script>
+
+import Movie from '@/components/Movie.vue';
+
 export default {
   name: 'AppMain',
+  components: {
+    Movie,
+  },
+  props: {
+      selectedMovie: Array,
+  },
 }
 </script>
 

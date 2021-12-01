@@ -2,12 +2,14 @@
   <div id="app">
     <header>
       <!-- componente AppHeader  -->
-      <AppHeader/>
+      <!-- catturo l'evento lanciato da AppHeader => emit -->
+      <AppHeader @search="searchedMovie"/>
     </header>
 
     <main>
       <!-- componente AppMain  -->
-      <AppMain/>
+      <!-- invio il dato ricevuto da AppHeader a AppMain => props -->
+      <AppMain :selectedMovie="choosedMovie"/>
     </main>
   </div>
 </template>
@@ -21,6 +23,18 @@ export default {
   components: {
     AppHeader,
     AppMain,
+  },
+  data() {
+    return {
+      // salvo il dato inviato da AppHeader 
+      choosedMovie: [],
+    }
+  },
+  methods: {
+    // tengo traccia del film richiesto dall'utente
+    searchedMovie(movies) {
+      this.choosedMovie = movies;
+    }
   }
 }
 </script>
