@@ -2,7 +2,9 @@
     <div class="card" >
         <span>Titolo: {{ details.title }} </span>
         <span>Titolo originale: {{ details.original_title }}</span>
-        <span>Lingua: {{ details.original_language }}</span>
+        <img v-if="details.original_language === 'it'" src='../assets/img/it.jpg'  alt="Italian Flag">
+        <img v-else-if="details.original_language === 'en'" src='../assets/img/en.jpg'  alt="English Flag">
+        <span v-else>Lingua originale non disponibile</span>
         <span>Voto: {{ details.vote_average }}</span>
     </div>
 </template>
@@ -25,6 +27,10 @@ export default {
 
     span {
         display: block;
+    }
+
+    img {
+        width: 25px;
     }
 }
 </style>
