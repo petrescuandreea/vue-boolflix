@@ -73,6 +73,7 @@ export default {
 
 .card:hover {
     cursor: pointer;
+    background-color: black;
 }
 
 .card:hover .additional-info {
