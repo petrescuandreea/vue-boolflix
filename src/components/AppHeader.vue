@@ -5,7 +5,7 @@
           <input type="text" placeholder="Search movie" v-model="inputText">
 
           <!-- lancio l'evento search e gli passo un parametro per inviare i dati -->
-          <button @click.prevent="$emit('searchMovie', inputText)">Search</button>
+          <button @click.prevent="$emit('search', inputText)">Search</button>
       </form>
 
   </div>
