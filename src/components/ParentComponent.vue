@@ -89,5 +89,6 @@ header {
 }
 main {
     background-color: rgba(67,67,67,255);
+    min-height: calc(100vh - 100px);
 }
 </style>
