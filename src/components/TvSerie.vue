@@ -6,12 +6,12 @@
         </div>
 
         <div class="additional-info"> 
-            <span>Titolo: {{ details.name }} </span>
-            <span>Titolo originale: {{ details.original_name }}</span>
+            <span><strong>Titolo:</strong> {{ details.name }} </span>
+            <span><strong>Titolo originale:</strong> {{ details.original_name }}</span>
             <img v-if="details.original_language === 'it'" src='../assets/img/it.jpg'  alt="Italian Flag">
             <img v-else-if="details.original_language === 'en'" src='../assets/img/en.jpg'  alt="English Flag">
             <span v-else>Lingua originale non disponibile</span>
-            <span>Voto: {{ details.vote_average }}</span>
+            <span><strong>Voto:</strong> {{ details.vote_average }}</span>
         </div>
     </div>
 </template>
