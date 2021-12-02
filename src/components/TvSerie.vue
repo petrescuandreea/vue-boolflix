@@ -12,6 +12,8 @@
             <img v-else-if="details.original_language === 'en'" src='../assets/img/en.jpg'  alt="English Flag">
             <span v-else>Lingua originale non disponibile</span>
             <span><strong>Voto:</strong> {{ details.vote_average }}</span>
+            <p v-if="details.overview === '' "><strong>Overview:</strong> non disponibile</p>
+            <p v-else><strong>Overview:</strong> {{ details.overview }}</p>
         </div>
     </div>
 </template>
