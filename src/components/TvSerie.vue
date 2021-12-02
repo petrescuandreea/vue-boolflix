@@ -60,6 +60,7 @@ export default {
         position: absolute;
         top: 40px;
         left: 20px;
+        right: 20px;
 
         span {
             display: block;
