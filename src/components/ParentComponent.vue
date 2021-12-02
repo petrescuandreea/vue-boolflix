@@ -83,5 +83,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-
+header {
+    background-color: rgba(0,0,0,255);
+    height: 100px;
+}
+main {
+    background-color: rgba(67,67,67,255);
+}
 </style>

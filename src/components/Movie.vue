@@ -35,14 +35,54 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .card {
-    margin: 20px;
+    width: calc(100% / 3 - 150px);
+    height: 500px;
+    margin: 0 150px 50px 0;
+    position: relative;
+   
+    
 
-    span {
-        display: block;
+    .cover-card {
+        border: 4px solid white;
+
+        img {
+            width: 100%;
+            height: 500px;
+            display: block;
+        }
+
     }
 
-    img {
-        width: 25px;
+    .additional-info {
+        display: none;
+        position: absolute;
+        top: 40px;
+        left: 20px;
+
+        span {
+            display: block;
+        }
+
+        img {
+            width: 25px;
+        }
     }
+}
+
+.card:hover {
+    cursor: pointer;
+}
+
+.card:hover .additional-info {
+    display: block;
+    color: white;
+}
+
+.card:hover .cover-card img {
+    display: none;
+}
+
+.card:hover .cover-card {
+    height: 500px;
 }
 </style>
