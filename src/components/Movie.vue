@@ -61,6 +61,8 @@ export default {
         top: 40px;
         left: 20px;
         right: 20px;
+        height: 400px;
+        overflow-y: auto;
 
         span {
             display: block;

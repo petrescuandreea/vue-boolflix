@@ -41,7 +41,7 @@ export default {
     height: 500px;
     margin: 0 150px 50px 0;
     position: relative;
-   
+    
     
 
     .cover-card {
@@ -61,6 +61,8 @@ export default {
         top: 40px;
         left: 20px;
         right: 20px;
+        height: 400px;
+        overflow-y: auto;
 
         span {
             display: block;
