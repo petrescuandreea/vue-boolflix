@@ -1,5 +1,5 @@
 <template>
-  <div id="card-container">
+  <div id="cards-container">
       <Movie  
       v-for="movie in selectedMovie"
       :key="movie.id" 
@@ -13,7 +13,7 @@
 import Movie from '@/components/Movie.vue';
 
 export default {
-  name: 'AppMain',
+  name: 'Movies',
   components: {
     Movie,
   },
