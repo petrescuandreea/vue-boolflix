@@ -1,6 +1,6 @@
 <template>
   <div>
-      <header>
+    <header>
       <!-- componente AppHeader  -->
       <!-- catturo l'evento lanciato da AppHeader => emit -->
       <AppHeader @search="searched" />
@@ -88,7 +88,9 @@ header {
     height: 100px;
 }
 main {
-    background-color: rgba(67,67,67,255);
+    background-image: url('https://store-images.s-microsoft.com/image/apps.63705.14253076346048674.def8e318-27bf-4909-8862-99111cdf551a.107916e7-cc10-423a-9434-90ccf92d46cd?mode=scale&q=90&h=720&w=1280');
+    background-size: cover;
+    background-position: bottom;
     min-height: calc(100vh - 100px);
 }
 </style>
