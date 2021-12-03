@@ -26,6 +26,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 #cards-container {
+  background-color: rgba(67,67,67,255);
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
