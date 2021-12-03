@@ -30,6 +30,12 @@ export default {
       return {
           imgUrl: "https://image.tmdb.org/t/p/w342",
       }
+  },
+  methods: {
+      getStarRating(element) {
+          let vote = Math.floor((element.vote_average)/2);
+          return vote;
+      }
   }
 }
 </script>
