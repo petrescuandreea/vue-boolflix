@@ -7,10 +7,15 @@
     </header>
 
     <main>
+      <div v-if="listMovies.length === 0"></div>
+      
       <!-- componente Movies / TvSeries -->
       <!-- invio il dato ricevuto da AppHeader a Movies e TvSeries=> props -->
+      <div v-else>
       <Movies :selectedMovie="listMovies"/>
       <TvSeries :selectedTvSerie="listTvSeries"/>
+
+      </div>
 
     </main>
   </div>
@@ -90,7 +95,7 @@ header {
 main {
     background-image: url('https://store-images.s-microsoft.com/image/apps.63705.14253076346048674.def8e318-27bf-4909-8862-99111cdf551a.107916e7-cc10-423a-9434-90ccf92d46cd?mode=scale&q=90&h=720&w=1280');
     background-size: cover;
-    background-position: bottom;
+    background-position: center;
     min-height: calc(100vh - 100px);
 }
 </style>
