@@ -31,11 +31,34 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 #header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 30px 15px;
+
   #logo {
     font-size: 40px;
     font-weight: bold;
     color: rgba(117,0,0,255);
     text-transform: uppercase;
+  }
+
+  input {
+    margin-right: 10px;
+    padding: 2px 10px;
+  }
+
+  button {
+    font-size: 15px;
+    background-color: rgba(138,0,0,255);
+    color: white;
+    padding: 2px 5px;
+    cursor: pointer;
+    border: none;
+  }
+
+  button:hover {
+    background-color: #f25757;
   }
 }
 </style>
