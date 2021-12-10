@@ -11,7 +11,16 @@
             <img v-if="details.original_language === 'it'" src='../assets/img/it.jpg'  alt="Italian Flag">
             <img v-else-if="details.original_language === 'en'" src='../assets/img/en.jpg'  alt="English Flag">
             <span v-else>Lingua originale non disponibile</span>
-            <span><strong>Voto:</strong> {{ details.vote_average }}</span>
+            <!-- <span><strong>Voto:</strong> {{ details.vote_average }}</span> -->
+            <span v-if="details.vote_average === 0 ">
+                Nessuna valutazione
+            </span>
+            <div v-else>
+                <span><strong>Voto:</strong> {{ starRating(details) }}</span>
+                <span class="star">
+                    <i class="fas fa-star star" v-for="n, i in rating" :key="i"></i>
+                </span>
+            </div>
             <p v-if="details.overview === '' "><strong>Overview:</strong> non disponibile</p>
             <p v-else><strong>Overview:</strong> {{ details.overview }}</p>
         </div>
@@ -29,12 +38,12 @@ export default {
   data() {
       return {
           imgUrl: "https://image.tmdb.org/t/p/w342",
+          rating: 0,
       }
   },
   methods: {
-      getStarRating(element) {
-          let vote = Math.floor((element.vote_average)/2);
-          return vote;
+      starRating(element) {
+          this.rating = Math.round(element.vote_average/2);
       }
   }
 }
@@ -76,6 +85,10 @@ export default {
 
         img {
             width: 25px;
+        }
+
+         .star {
+            color: yellow;
         }
     }
 }
