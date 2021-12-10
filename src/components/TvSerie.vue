@@ -2,7 +2,7 @@
     <div class="card" >
          <div class="cover-card">
             <img v-if="details.poster_path === null" src="https://images.everyeye.it/img-notizie/netflix-3-novita-gustarsi-streaming-weekend-d-un-fiato-v3-540119-900x900.webp" alt="Netflix logo">
-            <img v-else :src="imgUrl + details.poster_path" alt="">
+            <img v-else :src="imgUrl + details.poster_path" :alt="details.name">
         </div>
 
         <div class="additional-info"> 
@@ -11,7 +11,15 @@
             <img v-if="details.original_language === 'it'" src='../assets/img/it.jpg'  alt="Italian Flag">
             <img v-else-if="details.original_language === 'en'" src='../assets/img/en.jpg'  alt="English Flag">
             <span v-else>Lingua originale non disponibile</span>
-            <span><strong>Voto:</strong> {{ details.vote_average }}</span>
+            <span v-if="details.vote_average === 0 ">
+                Nessuna valutazione
+            </span>
+            <div v-else>
+                <span><strong>Voto:</strong> {{ starRating(details) }}</span>
+                <span class="star">
+                    <i class="fas fa-star star" v-for="n, i in rating" :key="i"></i>
+                </span>
+            </div>
             <p v-if="details.overview === '' "><strong>Overview:</strong> non disponibile</p>
             <p v-else><strong>Overview:</strong> {{ details.overview }}</p>
         </div>
@@ -29,6 +37,12 @@ export default {
   data() {
       return {
           imgUrl: "https://image.tmdb.org/t/p/w342",
+          rating: 0,
+      }
+  },
+  methods: {
+      starRating(element) {
+          this.rating = Math.round(element.vote_average/2);
       }
   }
 }
@@ -41,8 +55,6 @@ export default {
     height: 500px;
     margin: 0 150px 50px 0;
     position: relative;
-    
-    
 
     .cover-card {
         border: 4px solid white;
@@ -70,6 +82,10 @@ export default {
 
         img {
             width: 25px;
+        }
+
+        .star {
+            color: yellow;
         }
     }
 }
