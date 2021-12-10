@@ -2,7 +2,7 @@
     <div class="card" >
         <div class="cover-card">
             <img v-if="details.poster_path === null" src="https://images.everyeye.it/img-notizie/netflix-3-novita-gustarsi-streaming-weekend-d-un-fiato-v3-540119-900x900.webp" alt="Netflix logo">
-            <img v-else :src="imgUrl + details.poster_path" alt="">
+            <img v-else :src="imgUrl + details.poster_path" :alt="details.title">
         </div>
 
         <div class="additional-info">
@@ -11,7 +11,7 @@
             <img v-if="details.original_language === 'it'" src='../assets/img/it.jpg'  alt="Italian Flag">
             <img v-else-if="details.original_language === 'en'" src='../assets/img/en.jpg'  alt="English Flag">
             <span v-else>Lingua originale non disponibile</span>
-            <!-- <span><strong>Voto:</strong> {{ details.vote_average }}</span> -->
+
             <span v-if="details.vote_average === 0 ">
                 Nessuna valutazione
             </span>
@@ -56,8 +56,6 @@ export default {
     height: 500px;
     margin: 0 150px 50px 0;
     position: relative;
-   
-    
 
     .cover-card {
         border: 4px solid white;
@@ -87,7 +85,7 @@ export default {
             width: 25px;
         }
 
-         .star {
+        .star {
             color: yellow;
         }
     }
