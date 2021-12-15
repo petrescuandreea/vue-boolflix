@@ -1,4 +1,5 @@
 # vue-boolflix
+Boolfix - Replica Netflix
 
 ## Project setup
 ```
